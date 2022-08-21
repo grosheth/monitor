@@ -18,3 +18,7 @@ def getInfo():
     info = subprocess.run("sudo kubectl describe pods")
     info = info.stdout
     return
+
+
+if __name__ == '__main__':
+    connect()
