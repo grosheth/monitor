@@ -1,5 +1,11 @@
 from asyncio import subprocess
 
+
+# Faire une connection ssh sur le PI et lancer les commandes via ce shell
+
+def connect():
+    return
+
 def getIP():
     return
 
@@ -10,4 +16,5 @@ def ping():
 
 def getInfo():
     info = subprocess.run("sudo kubectl describe pods")
+    info = info.stdout
     return
