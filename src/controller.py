@@ -7,6 +7,8 @@ import dotenv, os
 dotenv.load_dotenv("monitor/.env")
 SSH_USER = os.getenv("SSH_USER")
 IP = os.getenv("IP_ADDRESS")
+
+
 def connect():
     client = SSHClient()
 
@@ -17,7 +19,7 @@ def connect():
 
     client.connect(IP, username=SSH_USER)
     return client
-
+ 
 
 def command(command):
     client = connect()
