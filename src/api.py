@@ -5,6 +5,8 @@ import dotenv, os
 # Faire une connection ssh sur le PI et lancer les commandes via ce shell
 
 dotenv.load_dotenv("monitor/.env")
+SSH_USER = os.getenv("SSH_USER")
+IP = os.getenv("IP_ADDRESS")
 def connect():
     client = SSHClient()
 
@@ -13,7 +15,7 @@ def connect():
 
     client.set_missing_host_key_policy(AutoAddPolicy())
 
-    client.connect(os.getenv("IP_ADDRESS"), username=os.getenv("SSH_USER"))
+    client.connect("192.168.10.120", username=SSH_USER)
     return client
 
 
