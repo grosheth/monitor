@@ -15,7 +15,7 @@ def connect():
 
     client.set_missing_host_key_policy(AutoAddPolicy())
 
-    client.connect("192.168.10.120", username=SSH_USER)
+    client.connect(IP, username=SSH_USER)
     return client
 
 
