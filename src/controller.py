@@ -19,7 +19,7 @@ def connect():
 
     client.connect(IP, username=SSH_USER)
     return client
- 
+
 
 def command(command):
     client = connect()
