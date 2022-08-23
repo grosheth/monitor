@@ -6,16 +6,9 @@ from asyncio import subprocess
 def connect():
     return
 
-def getIP():
-    return
-
-def ping():
-    ip = getIP()
-    subprocess.run(f"ping {ip}")
-    return
 
 def getInfo():
-    info = subprocess.run("sudo kubectl describe pods")
+    info = subprocess.run("kubectl describe pods")
     info = info.stdout
     return
 
