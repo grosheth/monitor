@@ -15,13 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from controller.views import dashboard, info, pods, deployment, services
+import controller.views
 
 urlpatterns = [
-    path('', dashboard),
-    path('services/', services),
-    path('info/<str:resource>/<str:name>', info),
-    path('deployment/', deployment),
-    path('pods/', pods),
+    path('', controller.views.dashboard),
+    path('services/', controller.views.services),
+    path('info/<str:resource>/<str:name>', controller.views.info),
+    path('info/<str:resource>/<str:name>/restart', controller.views.restart),
+    path('deployment/', controller.views.deployment),
+    path('pods/', controller.views.pods),
     path('admin/', admin.site.urls),
 ]
