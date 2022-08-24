@@ -19,5 +19,6 @@ from controller.views import dashboard
 
 urlpatterns = [
     path('', dashboard),
+    path('pods', dashboard),
     path('admin/', admin.site.urls),
 ]

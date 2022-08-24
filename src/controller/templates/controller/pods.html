@@ -12,10 +12,10 @@
 <script src=""></script>
 <body class="bg-dark text-light">
     <h1>Dashboard Kubernetes</h1>
-    <div>        
+    <div>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="dashboard">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="">Dashboard</a></li>
                 <li class="breadcrumb-item active"><a aria-current="pods">Pods</a></li>
             </ol>
         </nav>
@@ -24,6 +24,14 @@
     <div>
         {% for nombre in test %}
         <p>{{ nombre }}</p>
+        <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-light">Go somewhere</a>
+            </div>
+          </div>
         {% endfor %}
         <p>This is another paragraph.</p>
     </div>
