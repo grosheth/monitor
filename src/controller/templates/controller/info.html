@@ -48,12 +48,13 @@
     <div class="container">
       <div class="row text-center">
         <div class="col mt-5 d-flex justify-content-center text-light">
+          {% for x in info_pod %}
           <p class="text-md-left">
-            {% for i in info_pod %}
-            {{ i }}
-            {{ info_deployment }}
-            {{ info_service }}
+            {{ x }}
+            {{ y }}
+            {{ z }}
           </p>
+          {% endfor %}
         </div>
       </div>
     </div>
