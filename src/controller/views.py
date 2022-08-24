@@ -45,11 +45,16 @@ def info(request, name):
     info_deployment = api.command(f"kubectl describe deploy { name }")
     info_service = api.command(f"kubectl describe service { name }")
 
+    print(info_pod)
+    
     if info_pod != "":
         separated = info_pod.split("\n")
+        resource_type = "Pod"
     elif info_deployment != "":
         separated = info_deployment.split("\n")
+        resource_type = "Deployment"
     else:
         separated = info_service.split("\n")
-        
-    return render(request, "controller/info.html", context={"info": separated})
+        resource_type = "Service"
+
+    return render(request, "controller/info.html", context={"info": separated, "resource_type": resource_type})
