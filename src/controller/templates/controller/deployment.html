@@ -13,16 +13,16 @@
 <body class="container-fluid bg-dark text-light">
     
   <div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="nav-link active" href="../">Home</a>
+            <a class="nav-link" href="../">Home</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Deployment</a>
+                    <a class="nav-link active" aria-current="page" href="#">Deployment</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../pods">Pods</a>
@@ -46,7 +46,6 @@
     </div>
   </div>
 
-  {% if describe == False %}
     <div class="container">
       <div class="row">
         {% for name in namelist %}
@@ -57,13 +56,12 @@
               </div>
               <div class="card-body">
                   <h5 class="card-title text-dark">{{ name }}</h5>
-                  <a href="#" class="btn btn-danger">Describe</a>
+                  <a href="../info/{{ name }}" class="btn btn-danger">Info</a>
               </div>
           </div>
         </div>
         {% endfor %}
     </div>
-  {% endif %}
 
 </div>
 </body>

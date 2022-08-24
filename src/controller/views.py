@@ -16,7 +16,7 @@ def pods(request):
     if len(separated) > int(number_of_pods):
         separated.pop(-1)
         
-    return render(request, "controller/pods.html", context={"length": range(int(number_of_pods)), "namelist": separated, "describe": describe})
+    return render(request, "controller/pods.html", context={"length": range(int(number_of_pods)), "namelist": separated})
 
 def deployment(request):
     describe = False
@@ -27,7 +27,7 @@ def deployment(request):
     if len(separated) > int(number_of_deploy):
         separated.pop(-1)
         
-    return render(request, "controller/deployment.html", context={"length": range(int(number_of_deploy)), "namelist": separated, "describe": describe})
+    return render(request, "controller/deployment.html", context={"length": range(int(number_of_deploy)), "namelist": separated})
 
 def services(request):
     describe = False
@@ -38,4 +38,8 @@ def services(request):
     if len(separated) > int(number_of_services):
         separated.pop(-1)
         
-    return render(request, "controller/services.html", context={"length": range(int(number_of_services)), "namelist": separated, "describe": describe})
+    return render(request, "controller/services.html", context={"length": range(int(number_of_services)), "namelist": separated})
+
+def info(request, name):
+    
+    return render(request, "controller/info.html", context={"length": range(int(number_of_services)), "namelist": separated})
