@@ -49,7 +49,8 @@
       <div class="row text-center">
         <div class="col mt-5 d-flex justify-content-center text-light">
           <p class="text-md-left">
-            {{ info_pod }}
+            {% for i in info_pod %}
+            {{ i }}
             {{ info_deployment }}
             {{ info_service }}
           </p>
