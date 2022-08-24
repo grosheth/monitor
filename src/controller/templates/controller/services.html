@@ -41,17 +41,17 @@
     </div>
 
     <div class="container">
-      <div class="row mt-2">
+      <div class="row mt-1">
         {% for name in namelist %}
-        <div class="col">
+        <div class="col mt-1">
 
-          <div class="card" style="width: 25rem" >
+          <div class="card text-center" style="width: 25rem" >
               <div class="card-header text-dark text-center">
                   {{ name }}
               </div>
               <div class="card-body">
-                  <h5 class="card-title text-dark text-center">{{ name }}</h5>
-                  <a href="#" class="btn btn-danger text-center">Describe</a>
+                  <h5 class="card-title text-dark">{{ name }}</h5>
+                  <a href="#" class="btn btn-danger">Describe</a>
               </div>
           </div>
         </div>
