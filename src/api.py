@@ -1,4 +1,5 @@
 from asyncio import subprocess
+from sys import stderr
 from paramiko import SSHClient, AutoAddPolicy
 import dotenv, os
 
@@ -20,8 +21,8 @@ def connect():
 
 def command(command):
     client = connect()
-    stdout= client.exec_command(str(command))
-    print(stdout)
+    stdin, stdout, stderr = client.exec_command(str(command))
+    print(stdin,stdout,stderr)
     output = f'{stdout.read().decode("utf8")}'
     print(output)
     stdout.close()
