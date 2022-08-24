@@ -46,8 +46,8 @@
     </div>
 
     <div class="container">
+    {% for name in namelist %}
       <div class="row text-center">
-        {% for name in namelist %}
         <div class="row mt-5 d-flex justify-content-center">
 
             <div class="card text-center" style="width: 30rem;" style="height: 20rem;">
@@ -60,7 +60,7 @@
               </div>
           </div>
         </div>
-        {% endfor %}
+    {% endfor %}
     </div>
 
 </body>
