@@ -2,10 +2,8 @@ from asyncio import subprocess
 from paramiko import SSHClient, AutoAddPolicy
 import dotenv, os
 
-# Faire une connection ssh sur le PI et lancer les commandes via ce shell
-dotenv.load_dotenv("monitor/.env")
-
 def connect():
+    dotenv.load_dotenv("monitor/.env")
     SSH_USER = os.getenv("SSH_USER")
     IP = os.getenv("IP_ADDRESS")
     client = SSHClient()
