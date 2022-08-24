@@ -3,6 +3,7 @@ from paramiko import SSHClient, AutoAddPolicy
 import dotenv, os
 
 def connect():
+
     dotenv.load_dotenv("monitor/.env")
     SSH_USER = os.getenv("SSH_USER")
     IP = os.getenv("IP_ADDRESS")
@@ -13,7 +14,7 @@ def connect():
 
     client.set_missing_host_key_policy(AutoAddPolicy())
 
-    client.connect(IP, username=SSH_USER)
+    client.connect("192.168.10.120", username="root")
     return client
 
 
