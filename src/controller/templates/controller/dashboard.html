@@ -11,7 +11,7 @@
 </style>
 <script src=""></script>
 <body class="bg-dark text-light">
-    <h1>Dashboard pour Kubernetes</h1>"
+    <h1>Dashboard pour Kubernetes</h1>
 <div>
     <h1>This is a Heading</h1>
     {% for nombre in test %}
@@ -19,6 +19,27 @@
     {% endfor %}
     <p>This is another paragraph.</p>
 </div>
-
+<div>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page">Home</li>
+        </ol>
+      </nav>
+      
+        <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Library</li>
+        </ol>
+        </nav>
+        
+        <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Library</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Data</li>
+        </ol>
+    </nav>    
+</div>
 </body>
 </html> 
