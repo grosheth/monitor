@@ -40,6 +40,8 @@ def services(request):
         
     return render(request, "controller/services.html", context={"length": range(int(number_of_services)), "namelist": separated})
 
-def info(request, name):
-    
-    return render(request, "controller/info.html", context={"length": range(int(number_of_services)), "namelist": separated})
+def info(request, resource_type, name):
+    print(name)
+    print(resource_type)
+    info = api.command(f"kubectl describe {resource_type} { name }")
+    return render(request, "controller/info.html", context={"info": info})

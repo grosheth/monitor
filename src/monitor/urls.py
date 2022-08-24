@@ -22,7 +22,7 @@ urlpatterns = [
     path('services/', services),
     path('info/service/<str:name>', info),
     path('info/pod/<str:name>', info),
-    path('info/deployment/<str:name>', info),
+    path('info/<str:resource_type>/<str:name>', info),
     path('deployment/', deployment),
     path('pods/', pods),
     path('admin/', admin.site.urls),
