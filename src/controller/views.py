@@ -52,7 +52,7 @@ def info(request, resource, name):
         separated = info_service.split("\n")
         resource_type = "Service"
 
-    return render(request, "controller/info.html", context={"info": separated, "resource_type": resource_type})
+    return render(request, "controller/info.html", context={"info": separated, "resource_type": resource_type, "name": name})
 
 def restart(request, resource, name):
     print(name)
