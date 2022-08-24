@@ -22,14 +22,14 @@
     </div>
 
     <div>
-        {% for nombre in test %}
+        {% for nombre in length %}
         <p>{{ nombre }}</p>
         <div class="card" style="width: 18rem;">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">{{ namelist[nombre] }}</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-light">Go somewhere</a>
+              <a href="#" class="btn btn-danger">Describe the pod</a>
             </div>
           </div>
         {% endfor %}
