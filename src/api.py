@@ -21,7 +21,7 @@ def connect():
 def command(command):
     client = connect()
     stdout= client.exec_command(command)
-    output = f'{stdout.read().decode("utf8")}'
+    output = f'{str(stdout).read().decode("utf8")}'
     stdout.close
     client.close
     return output
