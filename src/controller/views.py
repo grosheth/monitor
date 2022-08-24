@@ -8,6 +8,7 @@ def dashboard(request):
     return render(request, "controller/dashboard.html", context={"test": range(5)})
 
 def pods(request):
+    describe = False
     namelist = api.command("kubectl get pods --output name")
     number_of_pods = api.command("kubectl get pods --output name | wc -l")
     separated = namelist.split("\n")
@@ -15,9 +16,10 @@ def pods(request):
     if len(separated) > int(number_of_pods):
         separated.pop(-1)
         
-    return render(request, "controller/pods.html", context={"length": range(int(number_of_pods)), "namelist": separated})
+    return render(request, "controller/pods.html", context={"length": range(int(number_of_pods)), "namelist": separated, "describe": describe})
 
 def deployment(request):
+    describe = False
     namelist = api.command("kubectl get deploy --output name")
     number_of_deploy = api.command("kubectl get deploy --output name | wc -l")
     separated = namelist.split("\n")
@@ -25,9 +27,10 @@ def deployment(request):
     if len(separated) > int(number_of_deploy):
         separated.pop(-1)
         
-    return render(request, "controller/deployment.html", context={"length": range(int(number_of_deploy)), "namelist": separated})
+    return render(request, "controller/deployment.html", context={"length": range(int(number_of_deploy)), "namelist": separated, "describe": describe})
 
 def services(request):
+    describe = False
     namelist = api.command("kubectl get service --output name")
     number_of_services = api.command("kubectl get pods --output name | wc -l")
     separated = namelist.split("\n")
@@ -35,4 +38,4 @@ def services(request):
     if len(separated) > int(number_of_services):
         separated.pop(-1)
         
-    return render(request, "controller/services.html", context={"length": range(int(number_of_services)), "namelist": separated})
+    return render(request, "controller/services.html", context={"length": range(int(number_of_services)), "namelist": separated, "describe": describe})

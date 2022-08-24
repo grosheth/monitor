@@ -40,13 +40,14 @@
           </nav>
     </div>
 
+  {% if describe == false %}
     <div class="container">
-      <div class="row">
-        <h1>Services</h1>
+      <div class="row text-center">
+        <h1>services</h1>
         {% for name in namelist %}
         <div class="col mt-5">
-
-          <div class="card text-center" style="width: 25rem" >
+  
+          <div class="card text-center w-50">
               <div class="card-header text-dark text-center">
                   {{ name }}
               </div>
@@ -57,8 +58,8 @@
           </div>
         </div>
         {% endfor %}
-      </div>
     </div>
+  {% endif %}
 
 </body>
 </html> 
