@@ -41,8 +41,10 @@ def services(request):
     return render(request, "controller/services.html", context={"length": range(int(number_of_services)), "namelist": separated})
 
 def info(request, name):
-    info_pod = api.command(f"kubectl get pods")
+    info_pod = api.command(f"kubectl describe pod { name }")
     info_deployment = api.command(f"kubectl describe deploy { name }")
     info_service = api.command(f"kubectl describe service { name }")
+    separated = info_pod.split("\n")
+
     print(info_service, info_deployment, info_pod)
-    return render(request, "controller/info.html", context={"info_pod": info_pod, "info_deployment": info_deployment, "info_service": info_service})
+    return render(request, "controller/info.html", context={"info_pod": separated, "info_deployment": info_deployment, "info_service": info_service})
