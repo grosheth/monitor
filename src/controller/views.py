@@ -57,5 +57,6 @@ def info(request, resource, name):
 
 def restart(request, resource, name):
     delete = api.command(f"kubectl delete pod { name }")
-    sleep(5)
+    sleep(1)
     pods(request)
+    return render(request, "controller/pods.html", context={"length": range(int(pods.number_of_pods)), "namelist": pods.separated})
