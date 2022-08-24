@@ -9,4 +9,4 @@ def pods(request):
     namelist = api.command("kubectl get pods --output name")
     print(list(namelist))
     number_of_pods = api.command("kubectl get pods --output name | wc -l")
-    return render(request, "controller/pods.html", context={"length": int(number_of_pods), "namelist": list(namelist)})
+    return render(request, "controller/pods.html", context={"length": range(int(number_of_pods)), "namelist": list(namelist)})
