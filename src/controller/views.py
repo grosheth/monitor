@@ -40,17 +40,17 @@ def services(request):
         
     return render(request, "controller/services.html", context={"length": range(int(number_of_services)), "namelist": separated})
 
-def info(request, name):
+def info(request, resource, name):
     info_pod = api.command(f"kubectl describe pod { name }")
     info_deployment = api.command(f"kubectl describe deploy { name }")
     info_service = api.command(f"kubectl describe service { name }")
 
     print(info_pod)
-    
-    if info_pod != "":
+
+    if resource == "pod":
         separated = info_pod.split("\n")
         resource_type = "Pod"
-    elif info_deployment != "":
+    elif resource == "deployment.apps":
         separated = info_deployment.split("\n")
         resource_type = "Deployment"
     else:

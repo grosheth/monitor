@@ -20,9 +20,7 @@ from controller.views import dashboard, info, pods, deployment, services
 urlpatterns = [
     path('', dashboard),
     path('services/', services),
-    path('info/service/<str:name>', info),
-    path('info/pod/<str:name>', info),
-    path('info/deployment.apps/<str:name>', info),
+    path('info/<str:resource>/<str:name>', info),
     path('deployment/', deployment),
     path('pods/', pods),
     path('admin/', admin.site.urls),
