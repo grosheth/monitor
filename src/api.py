@@ -22,9 +22,7 @@ def connect():
 def command(command):
     client = connect()
     stdin, stdout, stderr = client.exec_command(str(command))
-    print(stdin,stdout,stderr)
     output = f'{stdout.read().decode("utf8")}'
-    print(output)
     stdout.close()
     client.close()
     return output
