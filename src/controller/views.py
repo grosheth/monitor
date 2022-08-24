@@ -56,7 +56,6 @@ def info(request, resource, name):
     return render(request, "controller/info.html", context={"info": separated, "resource_type": resource_type, "name": name})
 
 def restart(request, resource, name):
-    print(resource)
     if resource == "pod":
         api.command(f"kubectl delete pod { name }")
     namelist = api.command("kubectl get pods --output name")
