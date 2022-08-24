@@ -58,4 +58,4 @@ def info(request, resource, name):
 def restart(request, resource, name):
     delete = api.command(f"kubectl delete pod { name }")
     sleep(5)
-    pods(request, name)
+    pods(request)
