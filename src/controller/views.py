@@ -9,6 +9,8 @@ def dashboard(request):
 def pods(request):
     namelist = api.command("kubectl get pods --output name")
     print(namelist)
+    separated = namelist.split("\n")
+    print(separated)
     #comma_separated = "\n".join(namelist)
     #print(comma_separated)
     number_of_pods = api.command("kubectl get pods --output name | wc -l")
