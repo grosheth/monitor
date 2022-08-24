@@ -1,4 +1,5 @@
 from os import sep
+from time import sleep
 from unicodedata import name
 from django.shortcuts import render, HttpResponse
 import api
@@ -55,8 +56,6 @@ def info(request, resource, name):
     return render(request, "controller/info.html", context={"info": separated, "resource_type": resource_type, "name": name})
 
 def restart(request, resource, name):
-    print(name)
     delete = api.command(f"kubectl delete pod { name }")
-    print(delete)
-    info(request, resource, name)
-    return render(request, "controller/info.html", context={"info": info.separated, "resource_type": info.resource_type})
+    sleep(5)
+    pods(request, name)
