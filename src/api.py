@@ -31,4 +31,4 @@ def command(command):
 
 
 if __name__ == '__main__':
-    command("kubectl get pods")
+    pass
