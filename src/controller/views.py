@@ -45,6 +45,4 @@ def info(request, name):
     info_deployment = api.command(f"kubectl describe deploy { name }")
     info_service = api.command(f"kubectl describe service { name }")
     separated = info_pod.split("\n")
-
-    print(info_service, info_deployment, info_pod)
     return render(request, "controller/info.html", context={"info_pod": separated, "info_deployment": info_deployment, "info_service": info_service})
