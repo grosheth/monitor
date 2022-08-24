@@ -11,7 +11,9 @@
     <h1>Dashboard pour Kubernetes</h1>"
 <div class="">
     <h1>This is a Heading</h1>
-    <p>{{ test }}</p>
+    {% for nombre in test %}
+    <p>{{ nombre }}</p>
+    {% endfor %}
     <p>This is another paragraph.</p>
 </div>
 
