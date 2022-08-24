@@ -5,8 +5,8 @@ import dotenv, os
 def connect():
 
     dotenv.load_dotenv("monitor/.env")
-    SSH_USER = os.getenv("SSH_USER")
-    IP = os.getenv("IP_ADDRESS")
+    # SSH_USER = os.getenv("SSH_USER")
+    # IP = os.getenv("IP_ADDRESS")
     client = SSHClient()
 
     client.load_host_keys("ssh/known_hosts")
