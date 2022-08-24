@@ -19,7 +19,6 @@ def connect():
 
 
 def command(command):
-    print(stdout)
     client = connect()
     stdout= client.exec_command(command)
     print(stdout)
