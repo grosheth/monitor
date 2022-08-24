@@ -42,14 +42,12 @@
 
     <div class="container">
         <div class="row">
-          <div class="col">
-          </div>
+          <h1>Pods</h1>
           {% for name in namelist %}
-          <div class="col">
-            <h1>Deployment</h1>
+          <div class="col mt-5">
   
-            <div class="card" style="width: 25rem;">
-                <div class="card-header">
+            <div class="card text-center" style="width: 25rem" >
+                <div class="card-header text-dark text-center">
                     {{ name }}
                 </div>
                 <div class="card-body">
@@ -59,8 +57,6 @@
             </div>
           </div>
           {% endfor %}
-          <div class="col">
-          </div>
         </div>
       </div>
   

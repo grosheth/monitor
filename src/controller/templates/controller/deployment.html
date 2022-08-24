@@ -39,31 +39,26 @@
         </div>
       </nav>
 </div>
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          col
-        </div>
-        {% for name in namelist %}
-        <div class="col">
-          <h1>Deployment</h1>
 
-          <div class="card" style="width: 25rem;">
-              <div class="card-header">
-                  {{ name }}
-              </div>
-              <div class="card-body">
-                  <h5 class="card-title text-dark">{{ name }}</h5>
-                  <a href="#" class="btn btn-danger">Describe</a>
-              </div>
-          </div>
-        </div>
-        {% endfor %}
-        <div class="col">
-          col
+  <div class="container">
+    <div class="row">
+      <h1>Deployment</h1>
+      {% for name in namelist %}
+      <div class="col mt-5">
+
+        <div class="card text-center" style="width: 25rem" >
+            <div class="card-header text-dark text-center">
+                {{ name }}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title text-dark">{{ name }}</h5>
+                <a href="#" class="btn btn-danger">Describe</a>
+            </div>
         </div>
       </div>
-    </div>
+      {% endfor %}
+  </div>
 
+</div>
 </body>
 </html> 
