@@ -19,6 +19,7 @@ from controller.views import dashboard, pods
 
 urlpatterns = [
     path('', dashboard),
-    path('pods', pods),
+    path('dashboard/', dashboard),
+    path('pods/', pods),
     path('admin/', admin.site.urls),
 ]
