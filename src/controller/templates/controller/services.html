@@ -45,18 +45,21 @@
         <div class="col">
           col
         </div>
+        {% for name in namelist %}
         <div class="col">
-          <h1>Services</h1>
+          <h1>Deployment</h1>
 
-          {% for name in namelist %}
           <div class="card" style="width: 25rem;">
-          <div class="card-body">
-          <h5 class="card-title text-dark">{{ name }}</h5>
-          <a href="#" class="btn btn-danger">Describe</a>
+              <div class="card-header">
+                  {{ name }}
+              </div>
+              <div class="card-body">
+                  <h5 class="card-title text-dark">{{ name }}</h5>
+                  <a href="#" class="btn btn-danger">Describe</a>
+              </div>
           </div>
-          </div>
-          {% endfor %}
         </div>
+        {% endfor %}
         <div class="col">
           col
         </div>
