@@ -56,7 +56,12 @@ def info(request, resource, name):
     return render(request, "controller/info.html", context={"info": separated, "resource_type": resource_type, "name": name})
 
 def restart(request, resource, name):
-    delete = api.command(f"kubectl delete pod { name }")
-    sleep(1)
-    pod = pods(request)
-    return render(request, "controller/pods.html", context={"length": range(int(pod.number_of_pods)), "namelist": pod.separated})
+    api.command(f"kubectl delete pod { name }")
+    namelist = api.command("kubectl get pods --output name")
+    number_of_pods = api.command("kubectl get pods --output name | wc -l")
+    separated = namelist.split("\n")
+
+    if len(separated) > int(number_of_pods):
+        separated.pop(-1)
+        
+    return render(request, "controller/pods.html", context={"length": range(int(number_of_pods)), "namelist": separated})
