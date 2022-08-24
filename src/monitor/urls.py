@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from controller.views import dashboard, pods
+from controller.views import dashboard, pods, deployment, services
 
 urlpatterns = [
     path('', dashboard),
-    path('dashboard/', dashboard),
+    path('service/', services),
+    path('deployment/', deployment),
     path('pods/', pods),
     path('admin/', admin.site.urls),
 ]
