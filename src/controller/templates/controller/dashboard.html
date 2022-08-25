@@ -42,12 +42,49 @@
 
     <h1>Dashboard Kubernetes</h1>
     
-    <div>
-        {% for nombre in test %}
-        <p>{{ nombre }}</p>
+    <div class="container">
+      <div class="row text-center">
+        <div class="col mt-5 d-flex justify-content-center">
+
+            <div class="card text-center" style="width: 30rem;" style="height: 20rem;">
+              <div class="card-header text-dark text-center">
+                  Deployment
+              </div>
+              <div class="card-body">
+                  <h5 class="card-title text-dark">View all deployment on server</h5>
+                  <a href="../../../../../../deployment" class="btn btn-danger">Deployment</a>
+              </div>
+          </div>
+        </div>
+        <div class="col mt-5 d-flex justify-content-center">
+
+          <div class="card text-center" style="width: 30rem;" style="height: 20rem;">
+            <div class="card-header text-dark text-center">
+                Services
+            </div>
+            <div class="card-body">
+                <h5 class="card-title text-dark">View all deployment on server</h5>
+                <a href="../../../../../../services" class="btn btn-danger">Services</a>
+            </div>
+          </div>
+        </div>
+      <div class="col mt-5 d-flex justify-content-center">
+
+        <div class="card text-center" style="width: 30rem;" style="height: 20rem;">
+          <div class="card-header text-dark text-center">
+              Pods
+          </div>
+          <div class="card-body">
+              <h5 class="card-title text-dark">View all deployment on server</h5>
+              <a href="../../../../../../pods" class="btn btn-danger">Pods</a>
+          </div>
+        </div>
+      </div>
         {% endfor %}
-        <p>This is another paragraph.</p>
     </div>
+
+
+
 
 </body>
 </html> 
