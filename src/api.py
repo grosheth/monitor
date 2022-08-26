@@ -5,7 +5,7 @@ import dotenv, os
 
 def connect():
 
-    dotenv.load_dotenv()
+    dotenv.load_dotenv("/app/.env")
     SSH_USER = str(os.getenv("SSH_USER"))
     IP = str(os.getenv("IP_ADDRESS"))
     client = SSHClient()
