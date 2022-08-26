@@ -6,8 +6,8 @@ import dotenv, os
 def connect():
 
     dotenv.load_dotenv("monitor/.env")
-    # SSH_USER = os.getenv("SSH_USER")
-    # IP = os.getenv("IP_ADDRESS")
+    SSH_USER = str(os.getenv("SSH_USER"))
+    IP = str(os.getenv("IP_ADDRESS"))
     client = SSHClient()
 
     client.load_host_keys("ssh/known_hosts")
@@ -15,7 +15,7 @@ def connect():
 
     client.set_missing_host_key_policy(AutoAddPolicy())
 
-    client.connect("192.168.10.120", username="root")
+    client.connect(IP, username=SSH_USER)
     return client
 
 
