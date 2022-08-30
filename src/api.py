@@ -4,7 +4,6 @@ from paramiko import SSHClient, AutoAddPolicy
 import dotenv, os
 
 def connect():
-
     dotenv.load_dotenv()
     SSH_USER = str(os.getenv("SSH_USER"))
     IP = str(os.getenv("IP_ADDRESS"))
